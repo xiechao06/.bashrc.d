@@ -1,10 +1,16 @@
 #! /bin/bash
 /usr/bin/env pip $@
+
+if [ "$?" != "0"  ] || [ "$1" != "install" ]; then
+    exit -1
+fi
+
 actual_package_name=$(/usr/bin/env pip freeze | grep -i $2)
 
 installed_package_name=$(cat requirements.txt | grep ${actual_package_name//==*/})
 
 if [ "$1" = "install" ] && [ -z "$installed_package_name" ]
 then
-    echo $actual_package_name | sed 's/==/>=/' >> requirements.txt
+    echo ${actual_package_name//==/>=} >> requirements.txt
+    echo ... ${actual_package_name//==/>=} saved into requirements.txt
 fi
