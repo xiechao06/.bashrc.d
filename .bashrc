@@ -1,9 +1,9 @@
 export PATH="$HOME/.bashrc.d/bin:$PATH"
 
 if [ -f $HOME/.vim/.tinyvimrc ]; then
-    alias vimtiny="vim -N -u $HOME/.vim/.tinyvimrc -n"
+    alias vimeasy="vim -N -u $HOME/.vim/.tinyvimrc -n"
 else
-    alias vimtiny="vim -N -u NONE -n"
+    alias vimeasy="vim -N -u NONE -n"
 fi
 
-alias suvimtiny="sudo vim -N -u NONE -n"
+alias suvimeasy="sudo vim -N -u NONE -n"
