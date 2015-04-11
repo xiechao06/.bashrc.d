@@ -7,4 +7,3 @@ else
 fi
 
 alias suvimeasy="sudo vim -N -u NONE -n"
-alias quick-dirty-commit="git commit -am \"0\"; git push origin master"
