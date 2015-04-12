@@ -1,0 +1,19 @@
+#! /bin/bash
+
+message='trivial'
+while getopts ":m:" opt; do
+    case $opt in
+        m)
+            message=$OPTARG
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            ;;
+        :)
+            echo "Option -$OPTARG requires an argument." >&2
+            exit 1
+    esac
+done
+
+branch=$(git branch | grep "\*" | sed 's/\* //')
+git commit -am $message; git push origin $branch
