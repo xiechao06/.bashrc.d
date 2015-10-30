@@ -7,3 +7,5 @@ else
 fi
 
 alias suvimeasy="sudo vim -N -u NONE -n"
+
+alias xclip="xclip -sel clip"
